@@ -1,0 +1,76 @@
+h2{
+    font-size: 100px;
+    color: green;
+    margin:0;
+    padding:0;
+}
+
+.discription{
+    font-size: 15px;
+    font-weight: bold;
+    color: blue;
+}
+
+.bigContainer {
+    width: 612px;
+    margin:0 auto;
+}
+/* this is the large grid for the sudoku board */
+.sudokuBoard {
+    width: 606px;
+    height:606px;
+    border:3px solid black;s
+    z-index: 1;
+}
+.sudokuBoard div {
+    width: 200px;
+    height: 200px;
+    float: left;
+}
+
+/* this draws lines for the large sudoku board */
+.middle {
+    border: 3px solid;
+}
+.button {
+    background-color:white;
+    width: 160px;
+    margin:0 auto;
+}
+.updown {
+    border-top: 3px solid;
+    border-bottom: 3px solid;
+}
+.leftright {
+    border-left: 3px solid;
+    border-right: 3px solid;
+}
+
+/* this is the small grids inside of each section of the sudoku board */
+.sectionGrid {
+    width: 202px;
+    height:202px;
+    border:1px solid black;
+    z-index: 1;
+}
+.sectionGrid div {
+    width: 66px;
+    height: 66px;
+    float: left;
+}
+
+/* this draws lines for the small sudoku board */
+.smallMiddle {
+    border: 1px solid;
+}
+.smallUpDown {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+.smallLeftRight {
+    border-left: 1px solid;
+    border-right: 1px solid;
+}
+.shadeSection {
+    background-color: grey;
+}
