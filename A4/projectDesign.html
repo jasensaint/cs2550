@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Project Design Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+  <body>
+<h1>Project Design</h1>
+
+<b>Model</b>
+<p>
+<b>Constants</b><br>
+Easy< >, Medium< >, Hard< > pregenerated boards, and numbers 1-9
+<b>variables</b><br>
+Board<br>
+there is an object with a game board storing a 2d array whichwill adjust based on difficulty.
+ex.
+var board = {
+  cells: [[0,0,0,0,0,0,0,0,0],[0,0,0,0,7,0,0,0,0],[0,3,1,8,6,9,0,0,0],[2,0,1,3,0,0,0,8,0],[0,5,0,9,0,0,3,4,0],[0,7,0,0,0,0,0,0,0],[0,6,4,0,0,3,0,1,0],[0,0,5,0,0,0,0,0,8],[0,1,0,6,9,2,0,5,7]]
+};
+</p>
+<b>Game Setup</b>
+<p>
+loadBoard<br>
+This alllows you to pick a difficulty of game. or reset
+</p>
+<p>
+getNumber<br>
+this will allow you to get the numbers from the board grid
+</p>
+
+<p>
+<p>
+<b>Timer</b><br><br>
+This is a simple timer that will be called by startGame(), reset by reset() and stopped by successful completion.<br>
+resetClock()<br>
+resets the clock to 0's<br><br>
+stopClock()<br>
+stops clock and keeps the final value displayed.<br><br>
+startClock()<br>
+Starts the clock.
+</p>
+
+<b>Play</b>
+<p>
+enterNumber()<br>
+This will populate the number and then call the completion check.
+</p>
+<p>
+checkComplete()<br>
+This will check if the game is complete.
+</p>
+
+  </body>
+
+</html>
