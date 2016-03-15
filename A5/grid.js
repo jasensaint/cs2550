@@ -69,8 +69,10 @@ function changeColor(elmnt, clr)
     cel = cel.substring(cel.length - 1, cel.length);
     //var val = elmnt.innerHTML;
     //console.log(val);
-    
+
     document.getElementById("sectionDisplay").value = elmnt.parentNode.parentNode.parentNode.parentNode.parentNode.id;
     document.getElementById("cellDisplay").value = elmnt.id;
+    elmnt.innerHTML++;
+    console.log("html:" + elmnt.innerHTML);
     enterNumber(sec, cel, elmnt.innerHTML);
 }

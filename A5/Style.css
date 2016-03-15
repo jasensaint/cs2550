@@ -4,6 +4,13 @@ h2{
     margin:0;
     padding:0;
 }
+#imgDiv {position: relative; top: 0; left: 0; height: 100;}
+#imgYinYang {position: absolute; top: 0; left: 0;}
+
+
+.attentionGetter{
+color: red;
+}
 
 .discription{
     font-size: 15px;

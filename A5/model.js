@@ -79,47 +79,54 @@ function getNumber(args)
   return board.cells[i][j];
 }
 
+
 // enter number
 
 function enterNumber(section, cell, enteredNum)
 {
   //console.log(enteredNum);
   board.cells[section][cell] = enteredNum;
+  console.log("array: " +   board.cells[section][cell]);
   checkComplete();
 }
 //game complete logic
-
+// to test if the rows are complete uncommment the console.logs
 function checkComplete()
 {
   for(var i = 0; i < 9; i++)
   {
+    // keeps track of the quanitiy of the numbers 1- 9 in an array numberComplete.
     var numberComplete = [0,0,0,0,0,0,0,0,0];
     for(var j = 0; j < 9; j++)
     {
+      // this converts the section and row into a grid system.
       var x = Math.floor(j / 3) + (Math.floor(i / 3) * 3);
       //console.log("x:" + x);
       var y = (j % 3) + ((i % 3) * 3);
       //console.log("y:" + y);
+
+      //uses a grid system to access the correct cells.
       var z = board.cells[x][y];
       //console.log(z);
+
+      // takes the value in the cell and increments the array place holder.
       numberComplete[z]++;
     }
+    //console.log(numberComplete);
+
     for (var testNums = 0; testNums < 9; testNums++)
     {
       if(numberComplete[testNums] < 1)
       {
-        console.log("there are no " + testNums + "on row " + i)
+        //console.log("there are no " + testNums + "on row " + i)
       }
       else if(numberComplete[testNums] > 1)
       {
-        console.log("there are too many " + testNums + "on row " + i)
+        //console.log("there are too many " + testNums + "on row " + i)
       }
     }
 
   }
-
-
-
 }
 /*
 function checkComplete()
@@ -145,55 +152,3 @@ function checkComplete()
   }
 }
 */
-function checkOne2Nine(chunck)
-{
-  for(var i = 0; i < 9; i++)
-  {
-    if (chunck[i] == 1)
-    {
-      true1 = true;
-
-    }
-    else if(chunck[i] == 2)
-    {
-      true2 = true;
-    }
-    else if(chunck[i] == 3)
-    {
-      true3 = true;
-    }
-    else if(chunck[i] == 4)
-    {
-      true4 = true;
-    }
-    else if(chunck[i] == 5)
-    {
-      true5 = true;
-    }
-    else if(chunck[i] == 6)
-    {
-      true6 = true;
-    }
-    else if(chunck[i] == 7)
-    {
-      true7 = true;
-    }
-    else if(chunck[i] == 8)
-    {
-      true8 = true;
-    }
-    else if(chunck[i] == 9)
-    {
-      true9 = true;
-    }
-    else
-    {
-      //a cell with 0 should break the loop.
-      return false;
-    }
-    if (true1 == true && true2 == true && true3 == true && true4 == true && true5 == true && true6 == true && true7 == true && true7 == true && true8 == true && true9 == true)
-    {
-        return true;
-    }
-  }
-}
