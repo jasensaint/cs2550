@@ -10,36 +10,79 @@
     <script src="login.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="Style.css">
+    <script type="text/javascript">
+      function playVideo()
+      {
+        var video = document.getElementById("sudokuVideo");
+        var button = document.getElementById("play");
+        if(video.paused)
+        {
+          video.play();
+        }
+        else
+        {
+          video.pause();
+        }
+      }
+      </script>
 </head>
 
-  <body onload="showGrid(); loadImage(); displaySession()">
- Michael Smith A4 cs2550
+  <body onload="showGrid(); loadImage(); displaySession(); playVideo()">
 
  <div id="imgDiv">
    <p style="font-size: 120px; margin:0; padding:0;" >
-     Sud</p><img id="imgYinYang" src="yinyang.jpg" width="100" height="100" alt="Play Sudoku"> <p style="font-size: 120px" >ku!
+     Sud</p><img id="imgYinYang" src="yinyang.jpg" width="100" height="100" alt="Play Sudoku">
+     <br><br><br>
+   <p style="font-size: 120px; margin:0; padding:0;" >ku!
    </p>
-        image from http://www.freeimages.com/
  </div>
- <button onclick="localStorage.clear()">clear localStorage</button>
- <button onclick="displaySession()">refresh Storage display</button>
- <div id="sessionInfo" class="attentionGetter">
- </div>
+  image from http://www.freeimages.com/
+ <table>
+   <tr>
+     <td>
+       <button onclick="localStorage.clear()">clear localStorage</button>
+       <button onclick="displaySession()">refresh Storage display</button>
+       <div id="sessionInfo" class="attentionGetter">
+       </div>
 
-  <div id="gridDiv">
-  </div>
+        <div id="gridDiv">
+        </div>
+     </td>
+     <td>
+       <video id="sudokuVideo">
+         <source src="Smallest.mp4"
+                 type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
+       </video>
+       <br>
+       Video taken from: <a href="https://www.youtube.com/watch?v=OtKxtvMUahA" target="_blank">https://www.youtube.com/watch?v=OtKxtvMUahA</a>
+       <br>
+       <button onclick="playVideo()">Play/Pause</button>
+     </td>
+   </tr>
+   <tr>
+     <td>
+       <div>
+           <h5>Choose difficulty to start game:</h5>
+           <select>
+              <option onclick="loadBoard('easy')">Easy Game</option>
+              <option onclick="loadBoard('med')">Medium Game</option>
+              <option onclick="loadBoard('hard')">Hard Game</option>
+           </select>
 
-  <div>
-      <h5>Choose difficulty to start game:</h5>
-      <select>
-         <option onclick="loadBoard('easy')">Easy Game</option>
-         <option onclick="loadBoard('med')">Medium Game</option>
-         <option onclick="loadBoard('hard')">Hard Game</option>
-      </select>
+           <button onclick="loadBoard('blank')">Restart Game</button>
+           <button onclick="loadSampleBoard()">Load Sample JSON</button>
+       </div>
+     </td>
+     <td>
 
-      <button onclick="loadBoard('blank')">Restart Game</button>
-      <button onclick="loadSampleBoard()">Load Sample JSON</button>
-  </div>
+
+     </td>
+   </tr>
+ </table>
+
+
+
+
 
 
   </body>

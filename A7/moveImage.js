@@ -30,7 +30,7 @@ function moveImage()
   }
 
   // move down
-  else if(imageYAxis <= 150 && imageYAxis < divSize - imgYinYang.width - margin)
+  else if(imageYAxis <= 100 && imageYAxis < divSize - imgYinYang.width - margin)
   {
     imageYAxis += moveDistance;
     yinYangImage.style.top = imageYAxis + "px";
