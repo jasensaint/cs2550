@@ -25,6 +25,7 @@
         }
       }
       </script>
+
 </head>
 
   <body onload="showGrid(); loadImage(); displaySession(); playVideo()">
@@ -58,19 +59,34 @@
        <br>
        <button onclick="playVideo()">Play/Pause</button>
      </td>
+     <td>
+       Game Solution:
+       <div id="solution">
+       </div>
+     </td>
    </tr>
    <tr>
      <td>
+       Game Time:
+       <div id="gameClock">
+         00:00:00
+       </div>
+
        <div>
            <h5>Choose difficulty to start game:</h5>
            <select>
-              <option onclick="loadBoard('easy')">Easy Game</option>
-              <option onclick="loadBoard('med')">Medium Game</option>
-              <option onclick="loadBoard('hard')">Hard Game</option>
+              <option onclick="loadSampleBoard('easy1');stop();start();displaySolution('easy1');">Easy Game</option>
+              <option onclick="loadSampleBoard('easy2');stop();start();displaySolution('easy2');">Easy2 Game</option>
+
+              <option onclick="loadSampleBoard('med1');stop();start();displaySolution('med1');">Medium Game</option>
+              <option onclick="loadSampleBoard('med2');stop();start();displaySolution('med2');">Medium2 Game</option>
+
+              <option onclick="loadSampleBoard('hard1');stop();start();displaySolution('hard1');">Hard Game</option>
+              <option onclick="loadSampleBoard('hard2');stop();start();displaySolution('hard2');">Hard2 Game</option>
            </select>
 
-           <button onclick="loadBoard('blank')">Restart Game</button>
-           <button onclick="loadSampleBoard()">Load Sample JSON</button>
+           <button onclick="loadBoard('blank');stop();">Restart Game</button>
+           <button onclick="loadSampleBoard('sampleBoard');stop();start();">Load Sample JSON</button>
        </div>
      </td>
      <td>

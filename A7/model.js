@@ -79,7 +79,7 @@ function getNumber(args)
   return board.cells[i][j];
 }
 
-function loadSampleBoard()
+function loadSampleBoard(diff)
 {
   var localRequest = new XMLHttpRequest();
 
@@ -92,9 +92,17 @@ function loadSampleBoard()
     var responseJson = JSON.parse(localRequest.responseText);
     console.log(responseJson);
     console.log(responseJson["result"]);
-    console.log(responseJson.sampleBoard);
-    board.cells = responseJson.sampleBoard;
-    showGrid.apply(this);
+    console.log(responseJson[diff]);
+
+      board.cells = responseJson[diff];
+      showGrid.apply(this);
+
+// easy 1&2 Puzzle //http://www.puzzles.ca/sudoku_puzzles/sudoku_easy_225.html
+// easy 1&2 Solution //http://www.puzzles.ca/sudoku_puzzles/sudoku_easy_225_solution.html
+// med 1&2 Puzzle http://www.puzzles.ca/sudoku_puzzles/sudoku_medium_243.html
+// med 1&2 Solution http://www.puzzles.ca/sudoku_puzzles/sudoku_medium_243_solution.html
+// hard 1&2 Puzzle http://www.puzzles.ca/sudoku_puzzles/sudoku_hard_239.html
+// hard 1&2 Solution http://www.puzzles.ca/sudoku_puzzles/sudoku_hard_239_solution.html
 
 // ***instructions said we could use jquery but the grading said we had to use request...
 /*
