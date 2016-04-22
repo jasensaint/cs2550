@@ -120,6 +120,7 @@ function changeColor(elmnt, clr)
     document.getElementById("sectionDisplay").value = elmnt.parentNode.parentNode.parentNode.parentNode.parentNode.id;
     document.getElementById("cellDisplay").value = elmnt.id;
     elmnt.innerHTML++;
-    console.log("html:" + elmnt.innerHTML);
+    console.log("s:" + sec);
+    console.log("c:" + cel);
     enterNumber(sec, cel, elmnt.innerHTML);
 }

@@ -139,40 +139,52 @@ function enterNumber(section, cell, enteredNum)
 // to test if the rows are complete uncommment the console.logs
 function checkComplete()
 {
+  var totalComplete = 0;
+  var complete = 0;
   for(var i = 0; i < 9; i++)
   {
     // keeps track of the quanitiy of the numbers 1- 9 in an array numberComplete.
-    var numberComplete = [0,0,0,0,0,0,0,0,0];
+    var numberComplete = [0,0,0,0,0,0,0,0,0,0];
     for(var j = 0; j < 9; j++)
     {
       // this converts the section and row into a grid system.
       var x = Math.floor(j / 3) + (Math.floor(i / 3) * 3);
       //console.log("x:" + x);
+
       var y = (j % 3) + ((i % 3) * 3);
       //console.log("y:" + y);
 
       //uses a grid system to access the correct cells.
       var z = board.cells[x][y];
-      //console.log(z);
+      console.log("x:" + x + "y:" + y +"z:" + z);
 
       // takes the value in the cell and increments the array place holder.
       numberComplete[z]++;
     }
     //console.log(numberComplete);
 
-    for (var testNums = 0; testNums < 9; testNums++)
+    for (var testNums = 1; testNums <= 9; testNums++)
     {
       if(numberComplete[testNums] < 1)
       {
-        //console.log("there are no " + testNums + "on row " + i)
+        console.log("there are no " + testNums + "on row " + i)
       }
       else if(numberComplete[testNums] > 1)
       {
-        //console.log("there are too many " + testNums + "on row " + i)
+        console.log("there are too many " + testNums + "on row " + i)
+      }
+      else if (numberComplete[testNums] == 1)
+      {
+        complete++;
       }
     }
-
   }
+  if(complete == 27)
+  {
+    stop();
+    alert("Congradulations! You completed the Sudoku game!");
+  }
+
 }
 /*
 function checkComplete()
