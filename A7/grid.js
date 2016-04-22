@@ -99,6 +99,30 @@ html += "</table>";
 return html;
 }
 
+function drawStar()
+{
+  document.getElementById("mediaDiv").innerHTML = "<canvas id='myCanvas' width='200' height='100' style='border:5px solid #0000ff;'></canvas>";
+
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  ctx.moveTo(100,0);
+
+  ctx.lineTo(120,30);
+  ctx.lineTo(150,30);
+  ctx.lineTo(130,60);
+  ctx.lineTo(140,90);
+
+  ctx.lineTo(100,60);
+
+  ctx.lineTo(60,90);
+  ctx.lineTo(70,60);
+  ctx.lineTo(50,30);
+  ctx.lineTo(80,30);
+
+  ctx.lineTo(100,0);
+  ctx.stroke();
+}
+
 function displaySolution(diff)
 {
   document.getElementById("solution").innerHTML = "<img src= " + diff + ".gif alt='Sudoku solution'>";
@@ -122,5 +146,9 @@ function changeColor(elmnt, clr)
     elmnt.innerHTML++;
     console.log("s:" + sec);
     console.log("c:" + cel);
+    if(elmnt.innerHTML > 9)
+    {
+      elmnt.innerHTML = 0;
+    }
     enterNumber(sec, cel, elmnt.innerHTML);
 }

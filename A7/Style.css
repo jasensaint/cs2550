@@ -5,7 +5,7 @@ h2{
     padding:0;
 }
 #imgDiv {position: relative; top: 0; left: 0; height: 100;}
-#imgYinYang {position: absolute; top: 0; left: 0;}
+#imgYinYang {position: relative; top: 0; left: 0;}
 
 
 .attentionGetter{
@@ -16,6 +16,12 @@ color: red;
     font-size: 15px;
     font-weight: bold;
     color: blue;
+}
+
+.warning{
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
 }
 
 .bigContainer {

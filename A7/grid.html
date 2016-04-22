@@ -24,32 +24,41 @@
           video.pause();
         }
       }
+      function pauseVideo()
+      {
+        var video = document.getElementById("sudokuVideo");
+        var button = document.getElementById("play");
+        video.pause();
+      }
       </script>
 
 </head>
 
-  <body onload="showGrid(); loadImage(); displaySession(); playVideo()">
+  <body onload="showGrid(); displaySession(); playVideo()">
 
  <div id="imgDiv">
    <p style="font-size: 120px; margin:0; padding:0;" >
-     Sud</p><img id="imgYinYang" src="yinyang.jpg" width="100" height="100" alt="Play Sudoku">
-     <br><br><br>
-   <p style="font-size: 120px; margin:0; padding:0;" >ku!
-   </p>
+     Sud<img id="imgYinYang" src="yinyang.jpg" width="100" height="100" alt="Play Sudoku" style="margin:0; padding:0;">ku!</p>
+
+
  </div>
   image from http://www.freeimages.com/
+
+
  <table>
    <tr>
      <td>
        <button onclick="localStorage.clear()">clear localStorage</button>
        <button onclick="displaySession()">refresh Storage display</button>
+
+
        <div id="sessionInfo" class="attentionGetter">
        </div>
 
         <div id="gridDiv">
         </div>
      </td>
-     <td>
+     <td id="mediaDiv">
        <video id="sudokuVideo">
          <source src="Smallest.mp4"
                  type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
@@ -71,23 +80,25 @@
        <div id="gameClock">
          00:00:00
        </div>
+       <div id="badNumberStatus" class="warning">
 
+       </div>
        <div>
            <h5>Choose difficulty to start game:</h5>
            <select>
-              <option onclick="loadSampleBoard('easy1');stop();start();displaySolution('easy1');">Easy Game</option>
-              <option onclick="loadSampleBoard('easy2');stop();start();displaySolution('easy2');">Easy2 Game</option>
-              <option onclick="loadSampleBoard('easyComplete');stop();start();displaySolution('easyComplete');">easyComplete Game</option>
+              <option onclick="loadSampleBoard('easy1');stop();start();displaySolution('easy1');pauseVideo();">Easy Game</option>
+              <option onclick="loadSampleBoard('easy2');stop();start();displaySolution('easy2');pauseVideo();">Easy2 Game</option>
+              <option onclick="loadSampleBoard('easyComplete');stop();start();displaySolution('easyComplete');pauseVideo();">easyComplete Game</option>
 
-              <option onclick="loadSampleBoard('med1');stop();start();displaySolution('med1');">Medium Game</option>
-              <option onclick="loadSampleBoard('med2');stop();start();displaySolution('med2');">Medium2 Game</option>
+              <option onclick="loadSampleBoard('med1');stop();start();displaySolution('med1');pauseVideo();">Medium Game</option>
+              <option onclick="loadSampleBoard('med2');stop();start();displaySolution('med2');pauseVideo();">Medium2 Game</option>
 
-              <option onclick="loadSampleBoard('hard1');stop();start();displaySolution('hard1');">Hard Game</option>
-              <option onclick="loadSampleBoard('hard2');stop();start();displaySolution('hard2');">Hard2 Game</option>
+              <option onclick="loadSampleBoard('hard1');stop();start();displaySolution('hard1');pauseVideo();">Hard Game</option>
+              <option onclick="loadSampleBoard('hard2');stop();start();displaySolution('hard2');pauseVideo();">Hard2 Game</option>
            </select>
 
-           <button onclick="loadBoard('blank');stop();">Restart Game</button>
-           <button onclick="loadSampleBoard('sampleBoard');stop();start();">Load Sample JSON</button>
+           <button onclick="loadBoard('blank');stop();pauseVideo();">Restart Game</button>
+           <button onclick="loadSampleBoard('sampleBoard');stop();start();pauseVideo();">Load Sample JSON</button>
        </div>
      </td>
      <td>
